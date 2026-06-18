@@ -1,0 +1,28 @@
+body{
+    font-family: Arial, sans-serif;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.info{
+    margin-bottom: 15px;
+}
+
+#username{
+    padding: 8px;
+    width: 250px;
+}
+
+#editor{
+    width: 100%;
+    height: 400px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.aktivitas{
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+}
