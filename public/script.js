@@ -42,7 +42,7 @@ socket.onmessage = (event) => {
     if (data.type === "online") {
 
         onlineText.textContent =
-            `🟢 Online: ${data.count}`;
+            `Online: ${data.count}`;
 
     }
 
@@ -51,7 +51,7 @@ socket.onmessage = (event) => {
         editor.value = data.content;
 
     }
-    if(data.type === "activity"){
+if(data.type === "activity"){
 
     const li =
         document.createElement("li");
@@ -61,11 +61,19 @@ socket.onmessage = (event) => {
 
     activityList.prepend(li);
 
+    while(activityList.children.length > 5){
+
+        activityList.removeChild(
+            activityList.lastChild
+        );
+
+    }
+
 }
 if(data.type === "typing"){
 
     typingStatus.textContent =
-        `✍️ ${data.username} sedang mengetik...`;
+        `${data.username} sedang mengetik...`;
 
 }
 

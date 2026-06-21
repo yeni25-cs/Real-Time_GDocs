@@ -3,50 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Realtime Docs</title>
+    <title>Flash Docs</title>
+
     <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Membuat status online dan tombol PDF sejajar */
+        .online-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px; /* Jarak antara tulisan online dan tombol */
+        }
+
+        /* Menghilangkan margin bawaan p agar sejajar sempurna */
+        .online-container p {
+            margin: 0;
+        }
+
+        /* Mengecilkan ukuran font Collaborative Document Editor */
+        .editor-header h2 {
+            font-size: 1.25rem; /* Anda bisa mengganti ukurannya sesuai selera (misal: 18px, 1.1rem, dll) */
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Realtime Docs</h1>
+<div class="app">
 
-    <div class="info">
-        <p id="online">🟢 Online: 0</p>
-        <p id="typing-status"></p>
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h1>Flash Docs</h1>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="online-container">
+                <p id="online">
+                    Online: 0
+                </p>
+                <button id="downloadPdf">
+                    PDF
+                </button>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+
+            <p id="typing-status">
+                Tidak ada aktivitas
+            </p>
+
+        </div>
+
+        <div class="sidebar-section">
 
             <input
-        type="text"
-        id="username"
-        placeholder="Masukkan nama">
+                type="text"
+                id="username"
+                placeholder="Masukkan nama">
 
-    <button id="joinBtn">
-        Masuk
-    </button>
-    </div>
+            <button id="joinBtn">
+                Masuk
+            </button>
 
-    <textarea
-    id="editor"
-    placeholder="Mulai mengetik...">
-</textarea>
+        </div>
 
-<br><br>
+        <div class="sidebar-section">
 
-<button id="downloadPdf">
-    📄 Download PDF
-</button>
+            <h3>Recent activity</h3>
 
-<div class="aktivitas">
+            <ul id="activity-list">
 
+            </ul>
 
-    <div class="aktivitas">
-        <h3>Riwayat Aktivitas</h3>
+        </div>
 
-        <ul id="activity-list">
+    </aside>
 
-        </ul>
-    </div>
+    <main class="editor-area">
 
-    <script src="script.js"></script>
+        <div class="editor-header">
+
+            <h2>
+                keyboard is automatically saved
+            </h2>
+
+        </div>
+
+        <textarea
+            id="editor"
+            placeholder="Mulai mengetik...">
+        </textarea>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
