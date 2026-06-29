@@ -1,106 +1,204 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flash Docs</title>
 
-    <link rel="stylesheet" href="style.css">
-    
-    <style>
-        /* Membuat status online dan tombol PDF sejajar */
-        .online-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px; /* Jarak antara tulisan online dan tombol */
-        }
+<meta charset="UTF-8">
 
-        /* Menghilangkan margin bawaan p agar sejajar sempurna */
-        .online-container p {
-            margin: 0;
-        }
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-        /* Mengecilkan ukuran font Collaborative Document Editor */
-        .editor-header h2 {
-            font-size: 1.25rem; /* Anda bisa mengganti ukurannya sesuai selera (misal: 18px, 1.1rem, dll) */
-        }
-    </style>
+<title>Flash Docs</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
 <div class="app">
 
-    <aside class="sidebar">
+<!-- TOPBAR -->
 
-        <div class="logo">
-            <h1>Flash Docs</h1>
-        </div>
+<aside class="sidebar">
 
-        <div class="sidebar-section">
-            <div class="online-container">
-                <p id="online">
-                    Online: 0
-                </p>
-                <button id="downloadPdf">
-                    PDF
-                </button>
-            </div>
-        </div>
 
-        <div class="sidebar-section">
+    <!-- kiri -->
 
-            <p id="typing-status">
-                Tidak ada aktivitas
-            </p>
+    <div class="logo">
 
-        </div>
+        <h1>
 
-        <div class="sidebar-section">
+            Flash Docs
 
-            <input
-                type="text"
-                id="username"
-                placeholder="Masukkan nama">
+        </h1>
 
-            <button id="joinBtn">
-                Masuk
+
+        <div class="download-menu">
+
+            <button id="downloadBtn">
+
+                File
+
             </button>
 
+
+            <div class="download-dropdown">
+
+                <div
+                class="download-item"
+                id="newDoc">
+
+                New
+
+                </div>
+
+
+                <div
+                class="download-item"
+                id="openFile">
+
+                Open File
+
+                </div>
+
+
+                <div
+                id="downloadPdf"
+                class="download-item">
+
+                Save as PDF
+
+                </div>
+
+
+                <div
+                id="downloadDocx"
+                class="download-item">
+
+                Save as Word (.docx)
+
+                </div>
+
+
+                <div
+                class="download-item"
+                id="saveCopy">
+
+                Save a Copy
+
+                </div>
+
+                <input
+                type="file"
+                id="fileInput"
+                hidden
+                accept=".txt"/>
+
+            </div>
+
         </div>
 
-        <div class="sidebar-section">
+    </div>
 
-            <h3>Recent activity</h3>
 
-            <ul id="activity-list">
+    <!-- tengah -->
 
-            </ul>
+    <div class="top-middle">
+
+        <input
+        type="text"
+        id="username"
+        placeholder="Masukkan nama">
+
+
+        <button id="joinBtn">
+
+            Masuk
+
+        </button>
+
+    </div>
+
+
+    <!-- activity -->
+
+    <div class="activity-section">
+
+        <p id="typing-status">
+
+            Tidak ada aktivitas
+
+        </p>
+
+
+        <div class="activity-menu">
+
+            <button id="activityBtn">
+
+                Activity ▼
+
+            </button>
+
+
+            <div class="activity-dropdown">
+
+                <ul id="activity-list">
+
+                </ul>
+
+            </div>
 
         </div>
 
-    </aside>
+    </div>
 
-    <main class="editor-area">
 
-        <div class="editor-header">
+    <!-- kanan -->
 
-            <h2>
-                keyboard is automatically saved
-            </h2>
+    <div class="top-right">
 
-        </div>
+        <p id="online">
 
-        <textarea
-            id="editor"
-            placeholder="Mulai mengetik...">
-        </textarea>
+            Online: 0
 
-    </main>
+        </p>
+
+    </div>
+
+
+</aside>
+
+
+<!-- EDITOR -->
+
+<main class="editor-area">
+
+    <div class="editor-header">
+
+        <h2>
+
+            Keyboard is automatically saved
+
+        </h2>
+
+    </div>
+
+
+    <textarea
+    id="editor"
+    placeholder="Mulai mengetik...">
+
+    </textarea>
+
+</main>
 
 </div>
+
 
 <script src="script.js"></script>
 
 </body>
+
 </html>

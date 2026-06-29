@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "docx": "^9.7.1",
     "express": "^5.2.1",
     "mysql2": "^3.22.5",
     "pdfkit": "^0.19.1",
